@@ -1,0 +1,89 @@
+﻿<Window x:Class="Formulario.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Formulario"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="Auto"  Width="Auto">
+    <DockPanel Background="AliceBlue">
+        
+        <StackPanel DockPanel.Dock="Top" Margin="10" Background="Lavender">
+            <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Encabezado del Ejercicio</TextBlock> 
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Margin="10" Background="Lavender">
+            <TextBlock TextAlignment="Center" FontSize="20" FontWeight="Bold">Manuel Pérez Jiménez</TextBlock>
+        </StackPanel>
+
+
+        <Grid DockPanel.Dock="Left" Margin="10" Background="LightCyan">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Margin="10" Grid.Row="0">Archivo</Button>
+            <Button Margin="10" Grid.Row="1">Ver</Button>
+            <Button Margin="10" Grid.Row="2">Editar</Button>
+            <Button Margin="10" Grid.Row="3">Herramientas</Button>
+        </Grid>
+
+        <StackPanel DockPanel.Dock="Left" Margin="10" Background="LightCyan">
+
+            <TextBlock Margin="10" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" > 
+                Formulario de Contacto
+            </TextBlock>
+
+            <Label Target="{Binding ElementName=txtUsuario}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_green.png" />
+                    <AccessText Text="_Usuario:" />
+                </StackPanel>
+            </Label>
+            <TextBox Name="txtUsuario" AcceptsReturn="True"/>
+
+            <Label Target="{Binding ElementName=txtName}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_red.png" />
+                    <AccessText Text="_Contraseña:" />
+                </StackPanel>
+            </Label>
+            <PasswordBox Name="psswd" />
+
+            <Label Target="{Binding ElementName=txtMail}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="http://cdn1.iconfinder.com/data/icons/fatcow/16/bullet_blue.png" />
+                    <AccessText Text="_Correo Electrónico:" />
+                </StackPanel>
+            </Label>
+            <TextBox Name="txtMail" AcceptsReturn="True"/>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <RadioButton GroupName="genero" Padding="0,0,15,0">Hombre</RadioButton>
+                <RadioButton GroupName="genero" Padding="0,0,15,0">Mujer</RadioButton>
+                <RadioButton GroupName="genero" Padding="0,0,15,0">Prefiero no responder</RadioButton>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <CheckBox Margin="10">Deportes</CheckBox>
+                    <CheckBox Margin="10">Moda</CheckBox>
+                    <CheckBox Margin="10">Televisión</CheckBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <CheckBox Margin="10">Películas</CheckBox>
+                    <CheckBox Margin="10">Series</CheckBox>
+                    <CheckBox Margin="10">Viajes</CheckBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <CheckBox Margin="10">Cultura</CheckBox>
+                    <CheckBox Margin="10">Política</CheckBox>
+                    <CheckBox Margin="10">Compras</CheckBox>
+                </StackPanel>
+            </StackPanel>
+            <Button HorizontalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="20">Enviar</Button>
+        </StackPanel>
+    </DockPanel>
+</Window>
